@@ -3,7 +3,7 @@ node_js:
   - "0.10"
 env:
   - NSQ_VERSION=0.2.31
-before_install: "bash scripts/travis/before-install.sh"
+before_install: "bash scripts/travis/before_install.sh"
 
 branches:
   only:

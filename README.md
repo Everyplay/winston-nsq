@@ -7,7 +7,7 @@ A NSQ transport for [winston](https://github.com/flatiron/winston) logging libra
   $ npm install winston
   $ npm install winston-nsq
 ```
-[![Build Status](https://secure.travis-ci.org/Everyplay/winston-nsq.png)](http://travis-ci.org/nokk/Everyplay/winston-nsq)
+[![Build Status](https://secure.travis-ci.org/Everyplay/winston-nsq.png)](http://travis-ci.org/Everyplay/winston-nsq)
 
 ## Usage
 ``` js
