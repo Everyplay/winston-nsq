@@ -27,9 +27,9 @@ function Nsq (options) {
   });
   this._queue = [];
 }
-
-module.exports = winston.transports.Nsq = Nsq;
 util.inherits(Nsq, winston.Transport);
+module.exports = winston.transports.Nsq = Nsq;
+
 
 Nsq.prototype.log = function (level, message, meta, done) {
   var data = {
@@ -47,11 +47,6 @@ Nsq.prototype.log = function (level, message, meta, done) {
 };
 
 function send (data, topic, producer, done) {
-  if (!producer.ready) return done(new Error('producer not ready'));
   var message = JSON.stringify(data);
-  var payload = {
-    topic    : topic,
-    messages : message
-  };
-  producer.send([payload], done);
+  producer.publish(topic, message, done);
 }
