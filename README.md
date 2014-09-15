@@ -2,6 +2,10 @@
 
 A NSQ transport for [winston](https://github.com/flatiron/winston) logging library.
 
+## Credits
+
+Code is based on [winston-kafka](https://github.com/nokk/winston-kafka)
+
 ## Installation
 ``` bash
   $ npm install winston
