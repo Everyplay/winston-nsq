@@ -1,0 +1,35 @@
+{
+  "name": "winston-nsq",
+  "version": "0.0.1",
+  "description": "NSQ transport for winston",
+  "author": "Matti Savolainen <matti@unity3d.com>",
+  "keywords": [
+    "nsq",
+    "logging",
+    "log",
+    "transport",
+    "winston"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "nsq.js": "^0.11.3",
+    "winston": "^0.7.3"
+  },
+  "devDependencies": {
+    "mocha": ">= 1.14.0",
+    "async": ">= 0.2.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Everyplay/winston-nsq"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test -R spec -t 5000"
+  }
+}

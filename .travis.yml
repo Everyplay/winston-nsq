@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "0.10"
+
+before_install: "bash scripts/travis/before-install.sh"
+
+branches:
+  only:
+    - master
+    - stable
+
+before_script:
+  - sleep 10
