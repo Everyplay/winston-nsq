@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 # Download and install the NSQ binaries
-export NSQ_DIST="nsq-${NSQ_VERSION}.linux-$(go env GOARCH).go1.2"
+export NSQ_DIST="nsq-${NSQ_VERSION}.linux-$(go env GOARCH).go1.3.1"
 wget "https://s3.amazonaws.com/bitly-downloads/nsq/${NSQ_DIST}.tar.gz"
 tar xf "${NSQ_DIST}.tar.gz"
 (
