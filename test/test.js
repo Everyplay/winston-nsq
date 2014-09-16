@@ -22,10 +22,10 @@ before(function (done) {
     handleExceptions: true
   };
   winston.add(winston.transports.Nsq, config);
-  winston.default.transports.Nsq._producer.once('ready', function() {
+  winston.default.transports[config.topic]._producer.once('ready', function() {
     done();
   });
-})
+});
 
 describe('Nsq transport', function () {
   describe('construtor', function () {
@@ -37,7 +37,7 @@ describe('Nsq transport', function () {
 
     it('should fail if topic is missing', function () {
       assert.throws(function () {
-        new Nsq({ nsqglookupd: [lookupHost] });
+        new Nsq({ nsqlookupd: [lookupHost] });
       });
     });
   });

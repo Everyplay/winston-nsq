@@ -5,12 +5,13 @@ var nsq = require('nsq.js');
 
 
 function Nsq (options) {
-  this.name = 'Nsq';
-  this.level = options.level || 'info';
+  options = options || {};
+  options.name = options.name || options.topic || 'Nsq';
+  winston.Transport.call(this, options);
   this.topic = options.topic;
   var self = this;
-  if(!options || (!options.host && !options.nsqd && !options.nsqlookupd)) {
-    throw new Error('winston-nsq: host, nsqd or nsqlookupd option must be present');
+  if(!options || (!options.host && !options.nsqd && !options.nsqlookupd) || !options.topic) {
+    throw new Error('winston-nsq: host or nsqd or nsqlookupd and topic option must be present');
   }
   this._producer = nsq.writer({
     host: options.host,
@@ -27,6 +28,7 @@ function Nsq (options) {
   });
   this._queue = [];
 }
+
 util.inherits(Nsq, winston.Transport);
 module.exports = winston.transports.Nsq = Nsq;
 
